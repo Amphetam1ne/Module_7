@@ -15,9 +15,8 @@ class Shop:
         self.__file_name = file_name
 
     def get_products(self):
-        my_file = open(self.__file_name, 'r')
-        read_file = my_file.read()
-        my_file.close()
+        with open(self.__file_name, 'r', encoding='utf-8') as my_file:
+            read_file = my_file.read()
         return read_file
 
     def add(self, *products):
